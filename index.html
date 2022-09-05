@@ -1,111 +1,135 @@
 <!DOCTYPE html>
 <!--должно быть lang=ru судя по контенту на русском-->
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Daniel Yurtaev</title>
     <link rel="stylesheet" href="styles.css">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="main-container">
+        <div class="general-information">
+            <div>
+                <img src="me1.jpg" class="general-information__avatar" alt="Avatar">
+            </div>
 
-    <div class="fio_img">
-        <div>
-            <img src="me1.jpg" class="avatar" alt="Avatar">
-        </div>
-        <div class="main-info right-part">
-            <h1>Юртаев Данила Вячеславович</h1>
+            <div class="main-info main-info_proportion">
+                <h1 class="main-info__fio">Юртаев Данила Вячеславович</h1>
+                <dl class="main-info__info">
+                    <dt class="main-info__info-description">Желаемая должность</dt>
+                    <dd class="main-info__info-value color-accent">Full Stack Development</dd>
 
-<!--            это всё не является параграфами, это всё div, это не блог и не статья в блоге, это нарушение семантики, единственное что по сути важно в html-->
-<!--            если хочется семантики, то здесь идеально подходит dl dt dd-->
-            <p class="blue-color">Желаемая должность: Full Stack Development</p>
-            <p>Образование: МГУ им. Н. П. Огарева</p>
-            <p>Город: Рузаевка</p>
+                    <dt class="main-info__info-description">Образование</dt>
+                    <dd class="main-info__info-value"><a class="link" href="https://mrsu.ru/ru/" target="_blank">МГУ им. Н. П. Огарева</a></dd>
 
-<!--            оформление телефонов и почты принято делать ссылками через href=tel: и href=mailto:-->
-            <p>Телефон:+79063795515</p>
-            <p>Email: kmiloslavskiy@gmail.com</p>
+                    <dt class="main-info__info-description">Город</dt>
+                    <dd class="main-info__info-value"><a class="link" href="https://goo.gl/maps/hk3CLSse1subnuJUA" target="_blank">Рузаевка</a></dd>
 
+                    <dt class="main-info__info-description">Телефон</dt>
+                    <dd class="main-info__info-value"><a class="link" href="tel:+79063795515">+79063795515</a></dd>
+
+                    <dt class="main-info__info-description">Email</dt>
+                    <dd class="main-info__info-value"><a class="link" href="mailto:kmiloslavskiy@gmail.com">kmiloslavskiy@gmail.com</a></dd>
+                </dl>
+    <!--            это всё не является параграфами, это всё div, это не блог и не статья в блоге, это нарушение семантики,
+                    единственное что по сути важно в html-->
+    <!--            если хочется семантики, то здесь идеально подходит dl dt dd-->
+
+<!--                <p class="color-accent">Желаемая должность: Full Stack Development</p>-->
+<!--                <p>Образование: <a href="https://mrsu.ru/ru/" target="_blank">МГУ им. Н. П. Огарева</a></p>-->
+<!--                <p>Город: <a href="https://goo.gl/maps/hk3CLSse1subnuJUA" target="_blank">Рузаевка</a></p>-->
+
+<!--    &lt;!&ndash;            оформление телефонов и почты принято делать ссылками через href=tel: и href=mailto:&ndash;&gt;-->
+<!--                <p>Телефон: <a href="tel:+79063795515">+79063795515</a></p>-->
+<!--                <p>Email: <a href="mailto:kmiloslavskiy@gmail.com">kmiloslavskiy@gmail.com</a></p>-->
+
+            </div>
         </div>
-    </div>
-    <div class="container divider">
-        <div class="left-theme blue-color">
-<!--            ОБРАЗОВАНИЕ - нет такого слова, это не аббревиатура, есть Образование.-->
-<!--            Если хочется сделать заглавными буквами, то для этого есть стили text-transform: uppercase, делать -->
-<!--            с помощью html то что решается через css - недопустимо-->
-            <p>ОБРАЗОВАНИЕ</p>
-        </div>
-        <div class="right-content right-part">
-<!--            не параграфы-->
-            <p>СПЕЦИАЛЬНОСТЬ - ИВТ</p><br>
-            <p>Дата окончание (июнь 2023), очная форма обучения(бакалавриат)</p>
-            <p>ИЭС, МГУ им. Н. П. Огарева, Саранск</p>
-        </div>
-    </div>
-    <div class="container divider">
-        <div class="left-theme blue-color">
-            <p>ОПЫТ РАБОТЫ</p>
-        </div>
-        <div class="right-content right-part">
-<!--            br и strong и p здесь всё лишнее. Каждый из них имеет своё семантическое значение и визуально решается через стили, не через разметку-->
-            <p>15 МАРТА 2022 - ТЕКУЩЕЕ ВРЕМЯ</p><br>
-            <p><strong>Компания: ООО "Кодмастерс Мордовия"</strong></p>
-            <p><strong>Должность: QA</strong></p>
-            <p>Должностные обязанности:</p>
-            <ul>
-                <li>Составление тестовой документации</li>
-                <li>Мануальное тестирование</li>
-                <li>Обсуждение задач с тимой</li>
-            </ul>
-        </div>
-    </div>
-    <div class="container divider">
-        <div class="left-theme blue-color">
-<!--            Это одна надпись, она не может быть разбита на два отдельных тега, текст должен естественно переносится на новую строку,
-за такое дизайнеру может по шапке прилететь
-а если дизайнер пойдёт жаловаться и таки придётся такое делать, то это будет тот редкий кейс где как раз подойдёт <br> тег-->
-            <p>ОПЫТ ПРОГРАММИРОВАНИЯ</p>
-            <p>ВНЕ УНИВЕРСИТЕТА</p>
-        </div>
-        <div class="right-content right-part">
-            <p>C# - курс от SkillBox(спирачен)(базовый уровень знаний)</p><br>
-            <p>HTML, CSS, JS - курс от SkillBox(спирачен)(базовый уровень знаний)</p><br>
-            <p>Python - курс от Кодмастерс (авто-тестирование)(базовый уровень знаний)</p><br>
-        </div>
-    </div>
-    <div class="container divider">
-        <div class="left-theme blue-color">
-            <p>ЗНАНИЕ АНГЛИЙСКОГО</p>
-        </div>
-        <div class="right-content right-part">
-            <p>A2</p>
-        </div>
-    </div>
-    <div class="container divider">
-        <div class="left-theme blue-color">
-            <p>ЦЕЛИ ПОСЕЩЕНИЯ КУРСА</p>
-        </div>
-        <div class="right-content right-part">
-            <p>Переквалификация из QA в Девелопера</p>
-        </div>
-    </div>
-    <div class="container divider">
-        <div class="left-theme blue-color">
-            <p>ОТКУДА УЗНАЛ ПРО КУРС</p>
-        </div>
-        <div class="right-content right-part">
-            <p>Рассказал друг, который работает в Кодмастерс</p>
-        </div>
-    </div>
-    <div class="container divider">
-        <div class="left-theme blue-color">
-            <p>ССЫЛКИ</p>
-        </div>
-        <div class="right-content right-part">
-            <ul>
-                <li><a href="https://github.com/DanielNautilus" target="_blank">GitHub</a></li>
-<!--                <li><a href="" target="_blank">LinkedIn</a></li>-->
-            </ul>
-        </div>
+        <section class="section">
+            <div class="container divider">
+                <div class="container__theme color-accent">
+                    <!--            ОБРАЗОВАНИЕ - нет такого слова, это не аббревиатура, есть Образование.-->
+                    <!--            Если хочется сделать заглавными буквами, то для этого есть стили text-transform: uppercase, делать -->
+                    <!--            с помощью html то что решается через css - недопустимо-->
+                    Образование
+                </div>
+                <div class="container__content container__content_proportion">
+                    Специальность - ИВТ<br>
+                    Дата окончание (июнь 2023), очная форма обучения(бакалавриат)<br>
+                    ИЭС, МГУ им. Н. П. Огарева, Саранск
+                </div>
+            </div>
+            <div class="container divider">
+                <div class="container__theme color-accent">
+                    Опыт работы
+                </div>
+                <div class="container__content container__content_proportion">
+                    <!--            br и strong и p здесь всё лишнее. Каждый из них имеет своё семантическое значение и визуально решается
+                                    через стили, не через разметку-->
+                    15 МАРТА 2022 - ТЕКУЩЕЕ ВРЕМЯ
+                    <div class="focussed">Компания: ООО "Кодмастерс Мордовия"</div>
+                    <div class="focussed">Должность: QA</div>
+                    Должностные обязанности:<br>
+                    <ul class="list">
+                        <li class="list__item">Составление тестовой документации</li>
+                        <li class="list__item">Мануальное тестирование</li>
+                        <li class="list__item">Обсуждение задач с тимой</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container divider">
+                <div class="container__theme color-accent">
+                    <!--            Это одна надпись, она не может быть разбита на два отдельных тега, текст должен естественно переносится на новую строку,
+                    за такое дизайнеру может по шапке прилететь
+                    а если дизайнер пойдёт жаловаться и таки придётся такое делать, то это будет тот редкий кейс где как раз подойдёт <br> тег-->
+                    Опыт программирования <br> вне университета
+                </div>
+                <div class="container__content container__content_proportion">
+                    C# - курс от SkillBox(спирачен)(базовый уровень знаний)<br>
+                    HTML, CSS, JS - курс от SkillBox(спирачен)(базовый уровень знаний)<br>
+                    Python - курс от Кодмастерс (авто-тестирование)(базовый уровень знаний)<br>
+                </div>
+            </div>
+            <div class="container divider">
+                <div class="container__theme color-accent">
+                    Знание английского
+                </div>
+                <div class="container__content container__content_proportion">
+                    Elementary
+                </div>
+            </div>
+            <div class="container divider">
+                <div class="container__theme color-accent">
+                    Цели посещения курса
+                </div>
+                <div class="container__content container__content_proportion">
+                    Переквалификация из QA в Девелопера
+                </div>
+            </div>
+            <div class="container divider">
+                <div class="container__theme color-accent">
+                    Откуда узнал про курс
+                </div>
+                <div class="container__content container__content_proportion">
+                    Рассказал друг, который работает в Кодмастерс
+                </div>
+            </div>
+            <div class="container divider">
+                <div class="container__theme color-accent">
+                    Ссылки
+                </div>
+                <div class="container__content container__content_proportion">
+                    <ul class="list">
+                        <li class="list__item"><a class="link" href="https://github.com/DanielNautilus" target="_blank">GitHub</a></li>
+                        <!--                <li><a href="" target="_blank">LinkedIn</a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>

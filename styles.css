@@ -2,7 +2,7 @@
 такое подключение допустимо, но можно лучше через link в index.html
 разница в том что этот import является блокирующим и пока он не отработает - стили подвиснут, а в html такого эффекта не будет
  */
-@import url('https://fonts.googleapis.com/css2?family=Kristi&family=Montserrat:wght@100&family=Roboto&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Kristi&family=Montserrat:wght@100&family=Roboto&display=swap');*/
 
 /**
 А вот это уже спорная вещь, я это вижу даже в самых-самых боевых проектах, как по мне это плохая практика, но допустимая,
@@ -10,74 +10,112 @@
  */
 *{
     box-sizing: border-box;
+
 }
 body{
+    margin: 0;
+}
+.main-container{
+    padding-top: 40px;
     font: normal 16px 'Roboto', sans-serif;
     /*лучше внутри body иметь контейнер с max-width, на сам body вешать ограничения - плохая практика, body должен соответствовать размерам окна браузера*/
     /*и баги напрямую будут связаны с js кодом в основном который будет некорректно рассчитывать размеры допустимого пространства*/
     max-width: 75%;
     margin: auto;
-    /*padding-top: 20px;*/
+    line-height: 1.5;
 }
-
-/*это совсем плохо, гораздо лучше создать отдельный класс, например .general-container и уже ему давать такие стили*/
-/*1) лишний каскад, что всегда плохо в css*/
-/*2) слишком уж общий селектор, который придётся рефакторить когда сайт станет чуть сложнее*/
-body > div{
-    margin-bottom: 15px;
-    padding-top: 15px;
-}
-
-/**
-Тоже самое что и #2 в моём комменте выше, отдельные классы будут лучше в управлении
- */
-h1, p{
-    margin: 5px 0;
-}
-
-/**
-   Плохое имя класса, если будет новая компоновка, то sidebar может и слева оказаться
- */
-.right-part{
-    width: 75%;
-}
-/*Main Info*/
-/**
-    почему здесь с нижним подчёркиванием, если везде через-дефис-пишешь?
- */
-.fio_img{
-    padding-top: 40px;
+.general-information{
     display: flex;
     justify-content: space-between;
+    padding-top: 0 !important;
+    margin-bottom: 15px;
 }
-/**
-    Плохое имя класса, прочитай самое начало по БЭМ, что делать если покрасишь блок красным?
-    лучше уж .text-primary, .color-accent и подобное
- */
-.blue-color{
-    color: blue;
-}
-.avatar{
+.general-information__avatar{
     border-radius: 20%;
     width: 160px;
     height: 160px;
-    margin: auto auto;
+    margin: 0;
 }
-.divider{
-    border-top: 1px aqua solid;
+.main-info__fio{
+    margin: 5px 0;
+}
+.main-info__info{
+    margin: 0;
 }
 .container{
     display: flex;
     justify-content: space-between;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+.container__theme{
+    text-transform: uppercase;
+}
+.focussed{
+    font-weight: 800;
+}
+/**
+   Плохое имя класса, если будет новая компоновка, то sidebar может и слева оказаться
+ */
+.main-info_proportion, .container__content_proportion{
+    width: 75%;
 }
 
+/**
+    Плохое имя класса, прочитай самое начало по БЭМ, что делать если покрасишь блок красным?
+    лучше уж .text-primary, .color-accent и подобное
+ */
+.color-accent{
+    color: blue;
+}
+
+.divider{
+    border-top: 1px aqua solid;
+}
+
+.link:link{
+    text-decoration: none;
+}
 /**
     раз для листов, то и назови .list и .list__item
  */
 /*For list*/
-ul li{
+.list{
+    margin: 0;
+}
+.list__item{
     margin: 5px 0;
 }
-li::marker{
+.list__item::marker{
     color: aqua;
+}
+
+@media (max-width: 900px) {
+    .main-container{
+        padding-top: 20px;
+        font: normal 20px 'Roboto', sans-serif;
+        /*лучше внутри body иметь контейнер с max-width, на сам body вешать ограничения - плохая практика, body должен соответствовать размерам окна браузера*/
+        /*и баги напрямую будут связаны с js кодом в основном который будет некорректно рассчитывать размеры допустимого пространства*/
+        max-width: 100%;
+        width: 100%;
+        margin: 0 0;
+        line-height: 2;
+    }
+    .general-information, .container{
+        flex-direction: column;
+        align-content: center;
+        text-align: center;
+    }
+    .main-info__info-value, .list{
+        margin: 0;
+        padding: 0;
+    }
+    .container__theme{
+        padding: 0 0 10px 0;
+    }
+    .main-info_proportion, .container__content_proportion{
+        width: 100%;
+    }
+
+
 }
