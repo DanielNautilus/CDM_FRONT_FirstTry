@@ -15,6 +15,7 @@
 body{
     margin: 0;
 }
+/*Main body*/
 .main-container{
     padding-top: 40px;
     font: normal 16px 'Roboto', sans-serif;
@@ -27,7 +28,7 @@ body{
 .general-information{
     display: flex;
     justify-content: space-between;
-    padding-top: 0 !important;
+    padding-top: 0;
     margin-bottom: 15px;
 }
 .general-information__avatar{
@@ -50,6 +51,9 @@ body{
 }
 .container__theme{
     text-transform: uppercase;
+    width: 25%; /*may be this is misstake - delete*/
+    margin-right: 10px;
+    font-weight: 500;
 }
 .focussed{
     font-weight: 800;
@@ -68,7 +72,7 @@ body{
 .color-accent{
     color: blue;
 }
-
+/*May be better use hr tag?*/
 .divider{
     border-top: 1px aqua solid;
 }
@@ -82,6 +86,7 @@ body{
 /*For list*/
 .list{
     margin: 0;
+    padding: 20px;
 }
 .list__item{
     margin: 5px 0;
@@ -89,30 +94,32 @@ body{
 .list__item::marker{
     color: aqua;
 }
-
+/*Media scalling*/
 @media (max-width: 900px) {
     .main-container{
         padding-top: 20px;
         font: normal 20px 'Roboto', sans-serif;
-        /*лучше внутри body иметь контейнер с max-width, на сам body вешать ограничения - плохая практика, body должен соответствовать размерам окна браузера*/
-        /*и баги напрямую будут связаны с js кодом в основном который будет некорректно рассчитывать размеры допустимого пространства*/
-        max-width: 100%;
-        width: 100%;
-        margin: 0 0;
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        max-width: 95%;
         line-height: 2;
     }
     .general-information, .container{
         flex-direction: column;
         align-content: center;
-        text-align: center;
     }
-    .main-info__info-value, .list{
-        margin: 0;
-        padding: 0;
+    /*todo:rewrite*/
+    .general-information .avatar,.main-info__fio{
+        text-align: center;
     }
     .container__theme{
         padding: 0 0 10px 0;
+        text-align: center;
+        margin: 0;
+        width: 100%;
     }
+
     .main-info_proportion, .container__content_proportion{
         width: 100%;
     }
